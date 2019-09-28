@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace GoodInput
 {
-    public class Mic
+    public static class Mic
     {
         //Do Click
         public enum ClickOption
@@ -34,7 +34,7 @@ namespace GoodInput
         static extern bool SetCursorPos(int X, int Y);
 
         //Do Click
-        public void Click (ClickOption option)
+        public static void Click (ClickOption option)
         {
             switch (option)
             {
@@ -62,12 +62,12 @@ namespace GoodInput
         }
 
         //Move Cursor
-        public void Move(int X, int Y)
+        public static void Move(int X, int Y)
         {
             SetCursorPos(X, Y);
         }
 
-        public ClickOption GetClickState()
+        public static ClickOption GetClickState()
         {
             return ClickOption.RightDownUp;
         }
